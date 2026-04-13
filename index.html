@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ankit Vaghani — Senior Python Developer</title>
+<meta name="description" content="Senior Python Developer. 7+ years. AI systems, microservices, scalable backends. Top Rated on Upwork."/>
+<meta property="og:title" content="Ankit Vaghani — Backend Engineer"/>
+<meta property="og:description" content="I build backends that scale. Python, AI, AWS. Top Rated Upwork freelancer."/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #080808;
+  --bg2: #0f0f0f;
+  --bg3: #161616;
+  --white: #f5f2ed;
+  --white2: #c8c4be;
+  --white3: #6b6760;
+  --accent: #e8ff00;
+  --accent2: #ff3c00;
+  --green: #00ff88;
+  --border: #252525;
+  --border2: #333333;
+  --nav-w: 260px;
+  --font-d: 'Bebas Neue', sans-serif;
+  --font-b: 'Barlow', sans-serif;
+  --font-m: 'DM Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-b);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--white3); }
+::selection { background: rgba(232,255,0,0.2); color: var(--white); }
+
+/* CURSOR */
+#cur-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--green);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  top: 0; left: 0;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s, height 0.15s, background 0.15s;
+  will-change: transform;
+}
+#cur-ring {
+  position: fixed;
+  width: 38px;
+  height: 38px;
+  border: 1.5px solid rgba(0,255,136,0.45);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  top: 0; left: 0;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s, height 0.25s, border-color 0.25s;
+  will-change: transform;
+}
+
+/* SIDEBAR */
+#sidebar {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: var(--nav-w);
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  padding: 2.5rem 2rem;
+}
+.s-logo { font-family: var(--font-d); font-size: 2.2rem; letter-spacing: .05em; color: var(--white); line-height: 1; margin-bottom: .3rem; }
+.s-logo span { color: var(--accent); }
+.s-role { font-family: var(--font-m); font-size: .78rem; color: var(--white2); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 3rem; }
+.nav-list { list-style: none; flex: 1; }
+.nav-list li { margin-bottom: .1rem; }
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .65rem 0;
+  font-family: var(--font-m);
+  font-size: .82rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--white3);
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: color .2s;
+}
+.nav-btn::before { content: ''; width: 20px; height: 1px; background: var(--white3); transition: width .3s, background .2s; }
+.nav-btn:hover { color: var(--white); }
+.nav-btn:hover::before { width: 36px; background: var(--accent); }
+.nav-btn.active { color: var(--accent); }
+.nav-btn.active::before { width: 36px; background: var(--accent); }
+.s-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; }
+.s-socials { display: flex; gap: 1rem; margin-bottom: 1rem; }
+.s-social { font-family: var(--font-m); font-size: .76rem; color: var(--white3); text-decoration: none; letter-spacing: .08em; text-transform: uppercase; transition: color .2s; }
+.s-social:hover { color: var(--accent); }
+.s-copy { font-family: var(--font-m); font-size: .72rem; color: var(--white3); letter-spacing: .06em; }
+
+/* MAIN */
+#main { margin-left: var(--nav-w); min-height: 100vh; }
+
+/* SECTIONS — SPA: JS controls visibility via inline style only */
+.pg {
+  display: none;
+  min-height: 100vh;
+  padding: 4rem 5rem 5rem 4rem;
+  animation: pgIn .4s ease forwards;
+}
+.pg.show { display: block; }
+@keyframes pgIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* SHARED */
+.sec-lbl {
+  font-family: var(--font-m);
+  font-size: .8rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.sec-lbl::after { content: ''; flex: 1; height: 1px; background: var(--border2); }
+
+/* HOME */
+/*#pg-home { display: block; } /* home visible by default */
+.h-eyebrow {
+  font-family: var(--font-m);
+  font-size: .85rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.h-eyebrow::before { content: ''; display: block; width: 30px; height: 1px; background: var(--accent); }
+.h-title {
+  font-family: var(--font-d);
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: .9;
+  letter-spacing: .02em;
+  color: var(--white);
+}
+.h-title .ol {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--white);
+  transition: color .3s, -webkit-text-stroke .3s;
+}
+.h-title .ol:hover { color: var(--accent); -webkit-text-stroke: 1.5px var(--accent); }
+.h-title .ac { color: var(--accent); }
+.h-div { width: 100%; height: 1px; background: var(--border2); margin: 2.5rem 0; }
+.h-bottom { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; align-items: end; }
+.h-desc { grid-column: 1 / 3; font-size: 1.1rem; color: var(--white2); line-height: 1.85; max-width: 480px; }
+.h-ctas { display: flex; flex-direction: column; gap: .75rem; align-items: flex-end; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--font-m);
+  font-size: .82rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .9rem 2rem;
+  cursor: pointer;
+  transition: .2s;
+  border: none;
+  text-decoration: none;
+}
+.btn-p { background: var(--accent); color: #000; font-weight: 600; }
+.btn-p:hover { background: var(--white); }
+.btn-s { border: 1px solid var(--border2); color: var(--white2); background: transparent; }
+.btn-s:hover { border-color: var(--white2); color: var(--white); }
+.h-stats { display: flex; gap: 3rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.stat-n { font-family: var(--font-d); font-size: 3rem; color: var(--white); line-height: 1; }
+.stat-n sup { font-size: 1.2rem; color: var(--accent); vertical-align: super; }
+.stat-l { font-family: var(--font-m); font-size: .78rem; color: var(--white2); letter-spacing: .1em; text-transform: uppercase; margin-top: .3rem; }
+.marquee { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: .6rem 0; margin-top: 3rem; }
+.marquee-inner { display: flex; gap: 3rem; width: max-content; animation: mq 22s linear infinite; }
+@keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.mq-item { font-family: var(--font-d); font-size: 1.05rem; letter-spacing: .1em; color: var(--white2); white-space: nowrap; }
+.mq-item .dot { color: var(--accent); margin-right: .4rem; }
+
+
+/* HOME CARD — right-side info block */
+.h-card {
+  border: 1px solid var(--border2);
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  align-self: end;
+}
+.h-card-row {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+}
+.h-card-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00ff88;
+  flex-shrink: 0;
+  animation: blink 2s infinite;
+}
+.h-card-dot--yellow { background: var(--accent); animation: none; }
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+.h-card-label {
+  font-family: var(--font-m);
+  font-size: .76rem;
+  color: var(--white2);
+  letter-spacing: .06em;
+}
+.h-card-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: .4rem 0;
+}
+.h-card-focus {
+  font-family: var(--font-m);
+  font-size: .62rem;
+  color: var(--white3);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: .2rem;
+}
+.h-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+.h-card-tag {
+  font-family: var(--font-m);
+  font-size: .7rem;
+  padding: .22rem .65rem;
+  border: 1px solid var(--border2);
+  color: var(--accent);
+  letter-spacing: .04em;
+}
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 1.5rem; }
+.about-big { font-family: var(--font-d); font-size: clamp(3rem, 6vw, 5.5rem); line-height: .95; color: var(--white); margin-bottom: 2rem; }
+.about-big .ol { color: transparent; -webkit-text-stroke: 1px var(--white2); }
+.ap { color: var(--white2); font-size: 1.05rem; line-height: 1.85; margin-bottom: 1.25rem; }
+.about-r { display: flex; flex-direction: column; padding-top: 1rem; }
+.fact { border-top: 1px solid var(--border); padding: 1.1rem 0; display: grid; grid-template-columns: 130px 1fr; gap: 1rem; }
+.fact-k { font-family: var(--font-m); font-size: .8rem; color: var(--white2); letter-spacing: .1em; text-transform: uppercase; padding-top: 2px; }
+.fact-v { font-size: 1rem; color: var(--white); line-height: 1.6; }
+.fact-v a { color: var(--accent); text-decoration: none; }
+
+/* SKILLS */
+.sk-big { font-family: var(--font-d); font-size: clamp(3rem, 6vw, 5rem); line-height: .95; color: var(--white); margin-bottom: 3rem; }
+.sg-list { display: flex; flex-direction: column; }
+.sg-row { display: grid; grid-template-columns: 160px 1fr; border-top: 1px solid var(--border); padding: 1.5rem 0; gap: 2rem; align-items: start; }
+.sg-row:last-child { border-bottom: 1px solid var(--border); }
+.sg-name { font-family: var(--font-m); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--white2); padding-top: 4px; }
+.sg-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.tag { font-family: var(--font-m); font-size: .82rem; padding: .38rem .9rem; border: 1px solid var(--border2); color: var(--white); transition: .2s; letter-spacing: .04em; cursor: default; }
+.tag:hover { border-color: var(--accent); color: var(--accent); }
+.tag.hl { border-color: var(--accent2); color: var(--accent2); }
+
+/* PROJECTS */
+.proj-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; margin-bottom: 3.5rem; }
+.proj-big { font-family: var(--font-d); font-size: clamp(3rem, 6vw, 5rem); line-height: .95; color: var(--white); }
+.proj-sub { color: var(--white2); font-size: 1.05rem; line-height: 1.8; }
+.proj-list { display: flex; flex-direction: column; }
+.proj-item {
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 44px 1fr 32px;
+  gap: 2rem;
+  padding: 2rem 0;
+  align-items: start;
+  cursor: pointer;
+  transition: background .2s, padding .2s, margin .2s;
+}
+.proj-item:last-child { border-bottom: 1px solid var(--border); }
+.proj-item:hover { background: var(--bg2); padding-left: 1rem; padding-right: 1rem; margin-left: -1rem; margin-right: -1rem; }
+.proj-num { font-family: var(--font-d); font-size: 1.4rem; color: var(--white2); line-height: 1; padding-top: 4px; }
+.proj-name { font-family: var(--font-d); font-size: 2rem; color: var(--white); letter-spacing: .02em; line-height: 1; margin-bottom: .75rem; transition: color .2s; }
+.proj-item:hover .proj-name { color: var(--accent); }
+.proj-outcome { font-family: var(--font-m); font-size: .82rem; color: var(--accent2); letter-spacing: .08em; text-transform: uppercase; margin-bottom: .75rem; }
+.proj-desc { font-size: 1.05rem; color: var(--white2); line-height: 1.75; margin-bottom: .9rem; max-width: 580px; }
+.proj-tech { display: flex; gap: .4rem; flex-wrap: wrap; }
+.tt { font-family: var(--font-m); font-size: .78rem; padding: .28rem .65rem; background: var(--bg3); border: 1px solid var(--border2); color: var(--white2); letter-spacing: .04em; }
+.proj-arr { font-size: 1.3rem; color: var(--white2); padding-top: .5rem; transition: color .2s, transform .2s; font-family: var(--font-d); }
+.proj-item:hover .proj-arr { color: var(--accent); transform: translate(4px,-4px); }
+
+/* EXPERIENCE */
+.exp-big { font-family: var(--font-d); font-size: clamp(3rem, 6vw, 5rem); line-height: .95; color: var(--white); margin-bottom: 3rem; }
+.exp-list { display: flex; flex-direction: column; }
+.exp-item { border-top: 1px solid var(--border); padding: 2rem 0; display: grid; grid-template-columns: 190px 1fr; gap: 3rem; }
+.exp-item:last-child { border-bottom: 1px solid var(--border); }
+.exp-date { font-family: var(--font-m); font-size: .82rem; color: var(--white2); letter-spacing: .08em; padding-top: 6px; }
+.exp-co { font-family: var(--font-m); font-size: .85rem; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: .3rem; }
+.exp-role { font-family: var(--font-d); font-size: 1.8rem; color: var(--white); line-height: 1; margin-bottom: 1rem; }
+.exp-ul { list-style: none; }
+.exp-ul li { font-size: 1.05rem; color: var(--white2); padding: .2rem 0 .2rem 1.1rem; position: relative; line-height: 1.7; }
+.exp-ul li::before { content: '—'; position: absolute; left: 0; color: var(--white3); }
+
+/* CONTACT */
+/*#pg-contact { display: none; }*/
+.c-big { font-family: var(--font-d); font-size: clamp(3rem, 6vw, 5rem); line-height: .88; color: var(--white); margin-bottom: 3rem; }
+.c-big .ol { color: transparent; -webkit-text-stroke: 1.5px var(--white2); }
+.c-big .ac { color: var(--accent); }
+.c-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; border-top: 1px solid var(--border); padding-top: 3rem; }
+.c-links { display: flex; flex-direction: column; }
+.c-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding: 1.2rem 0;
+  text-decoration: none;
+  color: var(--white2);
+  cursor: pointer;
+  transition: .2s;
+}
+.c-row:hover { color: var(--accent); }
+.c-row:hover .c-pf { color: var(--accent); }
+.c-row:hover .c-arr { color: var(--accent); transform: translate(4px,-4px); }
+.c-pf { font-family: var(--font-d); font-size: 1.5rem; color: var(--white); transition: color .2s; }
+.c-detail { font-family: var(--font-m); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--white2); margin-top: .2rem; }
+.c-arr { font-size: 1.1rem; transition: .2s; }
+.f-row { margin-bottom: 1.2rem; }
+.f-row label { display: block; font-family: var(--font-m); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--white2); margin-bottom: .5rem; }
+.f-row input, .f-row textarea {
+  width: 100%;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  color: var(--white);
+  font-family: var(--font-b);
+  font-size: 1rem;
+  padding: .8rem 1rem;
+  outline: none;
+  transition: border-color .2s;
+  resize: vertical;
+}
+.f-row input::placeholder, .f-row textarea::placeholder { color: var(--white3); }
+.f-row input:focus, .f-row textarea:focus { border-color: var(--accent); }
+.btn-submit {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  font-family: var(--font-m);
+  font-size: .85rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .9rem 2.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: .2s;
+}
+.btn-submit:hover { background: var(--white); }
+#form-status { display: none; font-family: var(--font-m); font-size: .88rem; margin-top: .75rem; letter-spacing: .06em; }
+
+/* MOBILE */
+#mob-bar { display: none; position: fixed; top: 0; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); z-index: 200; padding: 1rem 1.5rem; align-items: center; justify-content: space-between; }
+.mob-logo { font-family: var(--font-d); font-size: 1.6rem; color: var(--white); letter-spacing: .05em; }
+.mob-logo span { color: var(--accent); }
+.hbg { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.hbg span { display: block; width: 22px; height: 1px; background: var(--white); transition: .3s; }
+#mob-menu { display: none; position: fixed; top: 57px; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 190; flex-direction: column; justify-content: center; align-items: center; gap: 2rem; border-top: 1px solid var(--border); }
+#mob-menu.open { display: flex; }
+.mob-link { font-family: var(--font-d); font-size: 3rem; color: var(--white2); letter-spacing: .05em; transition: color .2s; cursor: pointer; }
+.mob-link:hover, .mob-link.active { color: var(--accent); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  #mob-bar { display: flex; }
+  #main { margin-left: 0; padding-top: 57px; }
+  .pg { padding: 2.5rem 1.5rem 4rem; }
+  .h-title { font-size: clamp(3.5rem, 14vw, 6rem); }
+  .h-bottom { grid-template-columns: 1fr; }
+  .h-ctas { align-items: flex-start; }
+  .h-stats { gap: 1.5rem; flex-wrap: wrap; }
+  .about-grid { grid-template-columns: 1fr; }
+  .proj-intro { grid-template-columns: 1fr; }
+  .proj-item { grid-template-columns: 36px 1fr; }
+  .proj-arr { display: none; }
+  .exp-item { grid-template-columns: 1fr; gap: .5rem; }
+  .c-big { font-size: clamp(3rem, 12vw, 5rem); }
+  .c-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .sg-row { grid-template-columns: 1fr; gap: .75rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR ELEMENTS -->
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <div class="s-logo">AV<span>.</span></div>
+  <div class="s-role">Backend Engineer</div>
+  <ul class="nav-list">
+    <li><button class="nav-btn active" onclick="go('home')">Home</button></li>
+    <li><button class="nav-btn" onclick="go('about')">About</button></li>
+    <li><button class="nav-btn" onclick="go('skills')">Skills</button></li>
+    <li><button class="nav-btn" onclick="go('projects')">Projects</button></li>
+    <li><button class="nav-btn" onclick="go('experience')">Experience</button></li>
+    <li><button class="nav-btn" onclick="go('contact')">Contact</button></li>
+  </ul>
+  <div class="s-bottom">
+    <div class="s-socials">
+      <a href="https://upwork.com" target="_blank" rel="noopener" class="s-social">Upwork</a>
+      <a href="https://linkedin.com/in/ankitvaghani" target="_blank" rel="noopener" class="s-social">LinkedIn</a>
+      <a href="https://github.com/ankitvaghani" target="_blank" rel="noopener" class="s-social">GitHub</a>
+    </div>
+    <div class="s-copy">© 2025 Ankit Vaghani</div>
+  </div>
+</nav>
+
+<!-- MOBILE BAR -->
+<div id="mob-bar">
+  <div class="mob-logo">AV<span>.</span></div>
+  <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div id="mob-menu">
+  <span class="mob-link active" onclick="go('home')">Home</span>
+  <span class="mob-link" onclick="go('about')">About</span>
+  <span class="mob-link" onclick="go('skills')">Skills</span>
+  <span class="mob-link" onclick="go('projects')">Projects</span>
+  <span class="mob-link" onclick="go('experience')">Experience</span>
+  <span class="mob-link" onclick="go('contact')">Contact</span>
+</div>
+
+<main id="main">
+
+<!-- HOME -->
+<div class="pg show" id="pg-home">
+  <div class="h-eyebrow">Available for new projects</div>
+  <div class="h-title">
+    <div>BACK<span class="ol">END</span></div>
+    <div>ENGI<span class="ac">NEER</span></div>
+  </div>
+  <div class="h-div"></div>
+  <div class="h-bottom">
+    <p class="h-desc">Senior Python Developer with 7+ years designing systems that handle real load — microservices, AI integrations, cloud infrastructure. Full ownership from architecture to production.</p>
+    <div class="h-card">
+      <div class="h-card-row">
+        <span class="h-card-dot"></span>
+        <span class="h-card-label">Currently available</span>
+      </div>
+      <div class="h-card-row">
+        <span class="h-card-dot h-card-dot--yellow"></span>
+        <span class="h-card-label">Responds in 0–4 hrs</span>
+      </div>
+      <div class="h-card-row">
+        <span class="h-card-dot h-card-dot--yellow"></span>
+        <span class="h-card-label">Top Rated on Upwork</span>
+      </div>
+      <div class="h-card-divider"></div>
+      <div class="h-card-focus">Current focus</div>
+      <div class="h-card-tags">
+        <span class="h-card-tag">AI Agents</span>
+        <span class="h-card-tag">RAG</span>
+        <span class="h-card-tag">FastAPI</span>
+        <span class="h-card-tag">AWS</span>
+      </div>
+    </div>
+    <div class="h-ctas">
+      <button class="btn btn-p" onclick="go('projects')">View Work →</button>
+      <button class="btn btn-s" onclick="go('contact')">Contact Me</button>
+    </div>
+  </div>
+  <div class="h-stats">
+    <div><div class="stat-n">7<sup>+</sup></div><div class="stat-l">Years exp</div></div>
+    <div><div class="stat-n">12<sup>+</sup></div><div class="stat-l">Projects</div></div>
+    <div><div class="stat-n">100<sup>%</sup></div><div class="stat-l">Upwork JSS</div></div>
+    <div><div class="stat-n">TOP<sup> 10</sup></div><div class="stat-l">Upwork rated</div></div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-inner">
+      <span class="mq-item"><span class="dot">✦</span>Python</span>
+      <span class="mq-item"><span class="dot">✦</span>FastAPI</span>
+      <span class="mq-item"><span class="dot">✦</span>Django</span>
+      <span class="mq-item"><span class="dot">✦</span>AWS</span>
+      <span class="mq-item"><span class="dot">✦</span>OpenAI</span>
+      <span class="mq-item"><span class="dot">✦</span>Microservices</span>
+      <span class="mq-item"><span class="dot">✦</span>Docker</span>
+      <span class="mq-item"><span class="dot">✦</span>PostgreSQL</span>
+      <span class="mq-item"><span class="dot">✦</span>Celery</span>
+      <span class="mq-item"><span class="dot">✦</span>Redis</span>
+      <span class="mq-item"><span class="dot">✦</span>Python</span>
+      <span class="mq-item"><span class="dot">✦</span>FastAPI</span>
+      <span class="mq-item"><span class="dot">✦</span>Django</span>
+      <span class="mq-item"><span class="dot">✦</span>AWS</span>
+      <span class="mq-item"><span class="dot">✦</span>OpenAI</span>
+      <span class="mq-item"><span class="dot">✦</span>Microservices</span>
+      <span class="mq-item"><span class="dot">✦</span>Docker</span>
+      <span class="mq-item"><span class="dot">✦</span>PostgreSQL</span>
+      <span class="mq-item"><span class="dot">✦</span>Celery</span>
+      <span class="mq-item"><span class="dot">✦</span>Redis</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="pg" id="pg-about">
+  <div class="sec-lbl">About me</div>
+  <div class="about-grid">
+    <div>
+      <div class="about-big"><div>THE</div><div>ENGI<span class="ol">NEER</span></div></div>
+      <p class="ap">I'm Ankit Vaghani, a Senior Python Developer based in Surat, India. For the past 7 years I've been building the backend layer of products that need to work at scale — APIs, microservices, async pipelines, and increasingly, AI-powered systems.</p>
+      <p class="ap">I've shipped production systems for startups and enterprise clients — from early-stage platforms like Astrosure.ai to high-traffic products like HerKey (JobsForHer). I've led engineering teams of 5–8 developers at Capgemini and ANZ.</p>
+      <p class="ap">On Upwork, I carry a 100% Job Success Score and Top Rated status. I prefer long-term, ownership-driven work over quick gigs.</p>
+      <div style="margin-top:2rem"><button class="btn btn-p" onclick="go('contact')">Work with me →</button></div>
+    </div>
+    <div class="about-r">
+      <div class="fact"><div class="fact-k">Location</div><div class="fact-v">Surat, Gujarat, India</div></div>
+      <div class="fact"><div class="fact-k">Experience</div><div class="fact-v">7+ years in production systems</div></div>
+      <div class="fact"><div class="fact-k">Upwork</div><div class="fact-v">Top Rated · 100% JSS · 12+ projects</div></div>
+      <div class="fact"><div class="fact-k">Response</div><div class="fact-v">0–4 hours on Upwork</div></div>
+      <div class="fact"><div class="fact-k">Speciality</div><div class="fact-v">Python, AI/LLM, Microservices, AWS</div></div>
+      <div class="fact"><div class="fact-k">Work style</div><div class="fact-v">Long-term. Ownership. Quality over quantity.</div></div>
+      <div class="fact"><div class="fact-k">Background</div><div class="fact-v">Capgemini, ANZ, startups across US, EU, AU</div></div>
+      <div class="fact"><div class="fact-k">Resume</div><div class="fact-v"><a href="#">Download PDF →</a></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="pg" id="pg-skills">
+  <div class="sec-lbl">Tech stack</div>
+  <div class="sk-big"><div>WHAT I</div><div><span style="color:transparent;-webkit-text-stroke:1px var(--white2)">WORK</span> <span style="color:var(--accent)">WITH</span></div></div>
+  <div class="sg-list">
+    <div class="sg-row">
+      <div class="sg-name">Backend</div>
+      <div class="sg-tags">
+        <span class="tag hl">Python</span><span class="tag hl">FastAPI</span><span class="tag hl">Django</span>
+        <span class="tag">DRF</span><span class="tag">Flask</span><span class="tag">Celery</span>
+        <span class="tag">Redis</span><span class="tag">RabbitMQ</span><span class="tag">REST APIs</span><span class="tag">WebSockets</span>
+      </div>
+    </div>
+    <div class="sg-row">
+      <div class="sg-name">AI / LLM</div>
+      <div class="sg-tags">
+        <span class="tag hl">OpenAI</span><span class="tag hl">Gemini</span><span class="tag">Groq</span>
+        <span class="tag">LangChain</span><span class="tag">RAG Pipelines</span><span class="tag">Embeddings</span>
+        <span class="tag">Vector DBs</span><span class="tag">AI Agents</span>
+      </div>
+    </div>
+    <div class="sg-row">
+      <div class="sg-name">Cloud</div>
+      <div class="sg-tags">
+        <span class="tag hl">AWS EC2</span><span class="tag hl">S3</span><span class="tag">RDS</span>
+        <span class="tag">Lambda</span><span class="tag">EKS</span><span class="tag">CloudFront</span>
+        <span class="tag">Docker</span><span class="tag">Nginx</span>
+      </div>
+    </div>
+    <div class="sg-row">
+      <div class="sg-name">DevOps</div>
+      <div class="sg-tags">
+        <span class="tag">CI/CD</span><span class="tag">GitHub Actions</span><span class="tag">Jenkins</span>
+        <span class="tag">Docker Compose</span><span class="tag">Kubernetes</span>
+      </div>
+    </div>
+    <div class="sg-row">
+      <div class="sg-name">Databases</div>
+      <div class="sg-tags">
+        <span class="tag hl">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span>
+        <span class="tag">Neo4j</span><span class="tag">Redis</span>
+      </div>
+    </div>
+    <div class="sg-row">
+      <div class="sg-name">Architecture</div>
+      <div class="sg-tags">
+        <span class="tag">System Design</span><span class="tag">Microservices</span><span class="tag">Event-driven</span>
+        <span class="tag">API Design</span><span class="tag">Scalability</span><span class="tag">Async Queues</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="pg" id="pg-projects">
+  <div class="sec-lbl">Selected work</div>
+  <div class="proj-intro">
+    <div class="proj-big"><div>THINGS</div><div>I <span style="color:var(--accent)">BUILT</span></div></div>
+    <p class="proj-sub">Real production systems — each solving a hard problem at scale. Not side projects. Not demos.</p>
+  </div>
+  <div class="proj-list">
+    <div class="proj-item">
+      <div class="proj-num">01</div>
+      <div>
+        <div class="proj-name">ASTROSURE.AI</div>
+        <div class="proj-outcome">→ AI-powered astrology platform at scale</div>
+        <p class="proj-desc">Built entire backend architecture — LLM insight generation, async pipelines for concurrent users, microservices on AWS EKS. Challenge: personalized AI responses in real-time without latency spikes.</p>
+        <div class="proj-tech"><span class="tt">FastAPI</span><span class="tt">OpenAI</span><span class="tt">Celery</span><span class="tt">Redis</span><span class="tt">AWS EKS</span><span class="tt">PostgreSQL</span><span class="tt">Docker</span></div>
+      </div>
+      <div class="proj-arr">↗</div>
+    </div>
+    <div class="proj-item">
+      <div class="proj-num">02</div>
+      <div>
+        <div class="proj-name">HERKEY</div>
+        <div class="proj-outcome">→ High-traffic career platform, 6-engineer team lead</div>
+        <p class="proj-desc">Led backend systems for one of India's largest women-in-tech career platforms. Managed feature delivery, resolved performance bottlenecks, coordinated architecture decisions across squads.</p>
+        <div class="proj-tech"><span class="tt">Django</span><span class="tt">DRF</span><span class="tt">PostgreSQL</span><span class="tt">Celery</span><span class="tt">AWS</span></div>
+      </div>
+      <div class="proj-arr">↗</div>
+    </div>
+    <div class="proj-item">
+      <div class="proj-num">03</div>
+      <div>
+        <div class="proj-name">ROOMPRICEGENIE</div>
+        <div class="proj-outcome">→ Automated hotel revenue management system</div>
+        <p class="proj-desc">Built dynamic pricing logic integrating with multiple hotel channel managers. Adjusts room prices in real-time based on demand signals. Replaced entirely manual pricing workflows.</p>
+        <div class="proj-tech"><span class="tt">Python</span><span class="tt">FastAPI</span><span class="tt">Celery</span><span class="tt">PostgreSQL</span><span class="tt">Channel APIs</span></div>
+      </div>
+      <div class="proj-arr">↗</div>
+    </div>
+    <div class="proj-item">
+      <div class="proj-num">04</div>
+      <div>
+        <div class="proj-name">MICDROP</div>
+        <div class="proj-outcome">→ Music streaming + social recording platform</div>
+        <p class="proj-desc">Built media upload pipelines, audio processing workflows, and real-time features for song streaming and user-recorded content. S3 media delivery to WebSocket interactions end-to-end.</p>
+        <div class="proj-tech"><span class="tt">Django</span><span class="tt">AWS S3</span><span class="tt">Redis</span><span class="tt">Celery</span><span class="tt">WebSockets</span></div>
+      </div>
+      <div class="proj-arr">↗</div>
+    </div>
+    <div class="proj-item">
+      <div class="proj-num">05</div>
+      <div>
+        <div class="proj-name">RIYAAH</div>
+        <div class="proj-outcome">→ Beauty e-commerce, payment integration</div>
+        <p class="proj-desc">Full e-commerce backend — payment gateway integration, order management workflows, and query optimisation. Checkout speed improved significantly after systematic performance pass.</p>
+        <div class="proj-tech"><span class="tt">Django</span><span class="tt">DRF</span><span class="tt">PostgreSQL</span><span class="tt">Payment APIs</span><span class="tt">AWS</span></div>
+      </div>
+      <div class="proj-arr">↗</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="pg" id="pg-experience">
+  <div class="sec-lbl">Career</div>
+  <div class="exp-big"><div><span style="color:transparent;-webkit-text-stroke:1.5px var(--white2)">7 YEARS</span></div><div>IN PROD</div></div>
+  <div class="exp-list">
+    <div class="exp-item">
+      <div class="exp-date">2021 — Present</div>
+      <div>
+        <div class="exp-co">Freelance · Upwork</div>
+        <div class="exp-role">Senior Python Developer &amp; Tech Lead</div>
+        <ul class="exp-ul">
+          <li>Built AI/LLM products, e-commerce platforms, and SaaS backends from architecture to AWS deployment</li>
+          <li>100% Job Success Score across 12+ projects — Top Rated, top 10% on the platform</li>
+          <li>End-to-end ownership on every project — no handoffs, full accountability</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">2020 — 2022</div>
+      <div>
+        <div class="exp-co">HerKey · JobsForHer</div>
+        <div class="exp-role">Backend Engineering Lead</div>
+        <ul class="exp-ul">
+          <li>Led backend team of 6 engineers on a high-traffic career platform</li>
+          <li>Delivered major feature releases and resolved performance bottlenecks under real load</li>
+          <li>Coordinated architecture decisions across multiple product squads</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">2018 — 2020</div>
+      <div>
+        <div class="exp-co">Capgemini · ANZ</div>
+        <div class="exp-role">Python Developer</div>
+        <ul class="exp-ul">
+          <li>Enterprise backend development for ANZ bank with strict SLAs and production standards</li>
+          <li>Built scalable APIs and microservices in a large multi-team environment</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">2017 — 2018</div>
+      <div>
+        <div class="exp-co">Early Career</div>
+        <div class="exp-role">Junior Python Developer</div>
+        <ul class="exp-ul">
+          <li>Started with Django, REST APIs, and database design fundamentals</li>
+          <li>Shipped first production systems, built foundational engineering discipline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="pg" id="pg-contact">
+  <div class="sec-lbl">Get in touch</div>
+  <div class="c-big">
+    <div>LET<span class="ac">'</span>S</div>
+    <div><span class="ol">BUILD</span></div>
+    <div>SOME<span class="ac">THING</span></div>
+  </div>
+  <div class="c-grid">
+    <div class="c-links">
+      <a href="https://upwork.com" target="_blank" rel="noopener" class="c-row">
+        <div><div class="c-pf">Upwork</div><div class="c-detail">Top Rated · 100% JSS · Reply in 0–4 hrs</div></div>
+        <div class="c-arr">↗</div>
+      </a>
+      <a href="mailto:ankit@example.com" class="c-row">
+        <div><div class="c-pf">Email</div><div class="c-detail">ankit@example.com</div></div>
+        <div class="c-arr">↗</div>
+      </a>
+      <a href="https://linkedin.com/in/ankitvaghani" target="_blank" rel="noopener" class="c-row">
+        <div><div class="c-pf">LinkedIn</div><div class="c-detail">linkedin.com/in/ankitvaghani</div></div>
+        <div class="c-arr">↗</div>
+      </a>
+      <a href="https://github.com/ankitvaghani" target="_blank" rel="noopener" class="c-row">
+        <div><div class="c-pf">GitHub</div><div class="c-detail">github.com/ankitvaghani</div></div>
+        <div class="c-arr">↗</div>
+      </a>
+    </div>
+    <div>
+      <div class="f-row"><label for="cf-n">Name</label><input id="cf-n" type="text" placeholder="Your name" required/></div>
+      <div class="f-row"><label for="cf-e">Email</label><input id="cf-e" type="email" placeholder="your@email.com" required/></div>
+      <div class="f-row"><label for="cf-m">Project</label><textarea id="cf-m" rows="4" placeholder="Tell me what you're building..." required></textarea></div>
+      <button class="btn-submit" id="sub-btn" onclick="handleSubmit(event)">Send Message →</button>
+      <p id="form-status"></p>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script>
+// ── SPA NAVIGATION ──────────────────────────────────────────
+var pages = ['home','about','skills','projects','experience','contact'];
+var current = 'home';
+
+function go(id) {
+  if (!document.getElementById('pg-' + id)) return;
+
+  // hide current
+  var old = document.getElementById('pg-' + current);
+  if (old) old.classList.remove('show');
+
+  // show new
+  var next = document.getElementById('pg-' + id);
+  next.classList.add('show');
+  current = id;
+
+  // update sidebar active state
+  document.querySelectorAll('.nav-btn').forEach(function(btn) {
+    btn.classList.remove('active');
+  });
+  document.querySelectorAll('.nav-btn').forEach(function(btn) {
+    if (btn.getAttribute('onclick') === "go('" + id + "')") {
+      btn.classList.add('active');
+    }
+  });
+
+  // update mobile menu active state
+  document.querySelectorAll('.mob-link').forEach(function(el) {
+    el.classList.remove('active');
+    if (el.getAttribute('onclick') === "go('" + id + "')") {
+      el.classList.add('active');
+    }
+  });
+
+  // close mobile menu
+  document.getElementById('mob-menu').classList.remove('open');
+
+  // scroll to top
+  window.scrollTo(0, 0);
+}
+
+// ── MOBILE HAMBURGER ────────────────────────────────────────
+document.getElementById('hbg').onclick = function() {
+  document.getElementById('mob-menu').classList.toggle('open');
+};
+
+// ── CUSTOM CURSOR ───────────────────────────────────────────
+var dot  = document.getElementById('cur-dot');
+var ring = document.getElementById('cur-ring');
+var mx = -100, my = -100;  // start offscreen
+var rx = -100, ry = -100;
+
+// Move dot instantly with mouse
+document.addEventListener('mousemove', function(e) {
+  mx = e.clientX;
+  my = e.clientY;
+  dot.style.left = mx + 'px';
+  dot.style.top  = my + 'px';
+});
+
+// Ring follows with smooth lag
+function animateRing() {
+  rx += (mx - rx) * 0.13;
+  ry += (my - ry) * 0.13;
+  ring.style.left = rx + 'px';
+  ring.style.top  = ry + 'px';
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+
+// Hover expand effect
+var interactives = document.querySelectorAll('a, button, .proj-item, .mob-link, .tag');
+interactives.forEach(function(el) {
+  el.addEventListener('mouseenter', function() {
+    dot.style.width  = '18px';
+    dot.style.height = '18px';
+    dot.style.background = '#e8ff00';
+    ring.style.width  = '56px';
+    ring.style.height = '56px';
+    ring.style.borderColor = 'rgba(232,255,0,0.55)';
+  });
+  el.addEventListener('mouseleave', function() {
+    dot.style.width  = '10px';
+    dot.style.height = '10px';
+    dot.style.background = '#00ff88';
+    ring.style.width  = '38px';
+    ring.style.height = '38px';
+    ring.style.borderColor = 'rgba(0,255,136,0.45)';
+  });
+});
+
+// ── FORMSPREE ───────────────────────────────────────────────
+function handleSubmit(e) {
+  e.preventDefault();
+  var btn    = document.getElementById('sub-btn');
+  var status = document.getElementById('form-status');
+  var n   = document.getElementById('cf-n').value.trim();
+  var em  = document.getElementById('cf-e').value.trim();
+  var msg = document.getElementById('cf-m').value.trim();
+
+  if (!n || !em || !msg) {
+    status.style.display = 'block';
+    status.style.color   = '#ff3c00';
+    status.textContent   = 'Please fill all fields.';
+    return;
+  }
+  btn.disabled    = true;
+  btn.textContent = 'Sending...';
+  status.style.display = 'none';
+
+  fetch('https://formspree.io/f/xreolgel', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ name: n, email: em, message: msg })
+  })
+  .then(function(res) {
+    if (res.ok) {
+      status.style.display = 'block';
+      status.style.color   = '#e8ff00';
+      status.textContent   = '✓ Sent. I\'ll reply within 4 hours.';
+      document.getElementById('cf-n').value = '';
+      document.getElementById('cf-e').value = '';
+      document.getElementById('cf-m').value = '';
+      btn.textContent = 'Sent ✓';
+    } else {
+      throw new Error('fail');
+    }
+  })
+  .catch(function() {
+    status.style.display = 'block';
+    status.style.color   = '#ff3c00';
+    status.textContent   = '✗ Failed. Email me directly at ankit@example.com';
+    btn.disabled    = false;
+    btn.textContent = 'Send Message →';
+  });
+}
+</script>
+</body>
+</html>
