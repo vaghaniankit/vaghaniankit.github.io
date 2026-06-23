@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Ankit Vaghani - Senior Python and Backend Engineer">
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#121212" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ff88" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#080808"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Sidebar accent (matches site nav) -->
+  <rect x="0" y="0" width="6" height="630" fill="#e8ff00"/>
+
+  <!-- Frame -->
+  <rect x="72" y="72" width="1056" height="486" fill="none" stroke="#252525" stroke-width="2"/>
+  <line x1="72" y1="140" x2="1128" y2="140" stroke="#333333" stroke-width="1"/>
+
+  <!-- Status dot (matches site cursor / availability) -->
+  <circle cx="1040" cy="108" r="40" fill="url(#glow)"/>
+  <circle cx="1040" cy="108" r="10" fill="#00ff88"/>
+
+  <!-- Eyebrow line + label -->
+  <line x1="120" y1="168" x2="168" y2="168" stroke="#e8ff00" stroke-width="2"/>
+  <text x="184" y="176" fill="#e8ff00" font-family="ui-monospace, monospace" font-size="22" letter-spacing="6">BACKEND ENGINEER</text>
+
+  <!-- Name -->
+  <text x="120" y="290" fill="#f5f2ed" font-family="ui-sans-serif, system-ui, sans-serif" font-size="88" font-weight="700">Ankit Vaghani</text>
+
+  <!-- Outline accent word -->
+  <text x="120" y="368" fill="none" stroke="#c8c4be" stroke-width="1.5" font-family="ui-sans-serif, system-ui, sans-serif" font-size="52" font-weight="700">SENIOR PYTHON</text>
+  <text x="620" y="368" fill="#e8ff00" font-family="ui-sans-serif, system-ui, sans-serif" font-size="52" font-weight="700">DEVELOPER</text>
+
+  <!-- Tech stack -->
+  <text x="120" y="430" fill="#c8c4be" font-family="ui-monospace, monospace" font-size="28" letter-spacing="1">Python &#183; AI/LLM &#183; Microservices &#183; AWS</text>
+
+  <!-- Footer meta -->
+  <line x1="120" y1="468" x2="1128" y2="468" stroke="#252525" stroke-width="1"/>
+  <text x="120" y="510" fill="#8a8680" font-family="ui-monospace, monospace" font-size="22" letter-spacing="1">7+ years &#183; Top Rated Upwork &#183; vaghaniankit.github.io</text>
+
+  <!-- Decorative code brackets (theme only) -->
+  <text x="1080" y="500" fill="#333333" font-family="ui-monospace, monospace" font-size="120" font-weight="300">{</text>
+  <text x="1120" y="500" fill="#333333" font-family="ui-monospace, monospace" font-size="120" font-weight="300">}</text>
+</svg>

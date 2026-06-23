@@ -1,0 +1,25 @@
+{
+  "name": "Ankit Vaghani — Backend Engineer",
+  "short_name": "Ankit Vaghani",
+  "description": "Senior Python backend engineer — production APIs, AI/LLM systems, and cloud infrastructure.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/og-image.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+# Ankit Vaghani — Senior Python & Backend Engineer
+
+> Personal portfolio: production backends, AI/LLM systems, microservices, and AWS cloud infrastructure. Top Rated Upwork freelancer with 7+ years experience.
+
+Canonical URL: https://vaghaniankit.github.io/
+Resume (PDF): https://vaghaniankit.github.io/assets/resume/ankit-vaghani-resume.pdf
+Book a call: https://cal.com/sparkscribe-technologies
+Company: https://sparkscribetech.com
+
+## Summary
+
+Ankit Vaghani is a Senior Python Developer and Backend Engineer based in Surat, Gujarat, India (IST, overlap with US & EU hours). He builds APIs, microservices, async pipelines, and AI-powered backends with full ownership from architecture to production deployment.
+
+- 7+ years in production systems (2018–present professional roles)
+- 100% Upwork Job Success Score, Top Rated, 12+ completed projects
+- 0–4 hour average response time on Upwork
+- Phone: +91 7573077372
+
+## Experience (from resume)
+
+- **2022–Present** — Founder & CTO, SparkScribe Technologies
+- **Sep 2024–Dec 2025** — Senior Team Lead, Keuro Life LLP (Astrosure.ai, Riyaah)
+- **Sep 2022–Aug 2024** — Senior Team Leader, Flooid LLP (HerKey / JobsForHer)
+- **Aug 2021–Sep 2022** — Sr. Python Developer (Consultant), Capgemini (ANZ Banking)
+- **Apr 2020–Jul 2021** — Sr. Python Developer, BrickSteel Enterprises Infotech
+- **Jan 2018–Dec 2019** — Python Django Developer, Codetrinity IT Services
+
+## Education
+
+- M.Sc. Information & Communication Technology (2016–2018), VNSGU, Surat
+- B.C.A. (2013–2016), VNSGU, Surat
+
+## Case studies (SparkScribe)
+
+- https://sparkscribetech.com/case-studies/astrosure-ai-platform/
+- https://sparkscribetech.com/case-studies/herkey-career-platform-for-women/
+- https://sparkscribetech.com/case-studies/roompricegenie-hotel-revenue-management/
+- https://sparkscribetech.com/case-studies/riyaah-beauty-ecommerce-platform/
+
+## Tech stack (aligned with SparkScribe Technologies)
+
+- **Backend (11):** Python, Django, Flask, FastAPI, Celery, Gunicorn, Django REST Framework, WebSockets, REST API, GraphQL, Microservices
+- **Frontend (12):** HTML5, CSS3, JavaScript, Bootstrap, Tailwind CSS, HTMX, jQuery, React, Angular, Vue.js, TypeScript, Alpine.js
+- **AI / ML (14):** OpenAI, LangChain, Hugging Face, RAG Pipelines, Claude API, Google Gemini, AI Agents, Vector Databases, scikit-learn, Pandas, NumPy, Selenium, BeautifulSoup, Scrapy
+- **Database (10):** PostgreSQL, MySQL, SQLite, MongoDB, Firebase, Redis, Elasticsearch, Neo4j, Amazon DynamoDB, pgvector
+- **DevOps (14):** Linux, Docker, Nginx, AWS, DigitalOcean, GitHub Actions, RabbitMQ, Kubernetes, Terraform, Jenkins, GitLab CI, AWS Lambda, Prometheus, Grafana
+
+## External resources (link only — not embedded)
+
+### Latest blog posts
+- https://sparkscribetech.com/blog/technical-seo-for-django-sites-checklist-2026/
+- https://sparkscribetech.com/blog/hire-python-developers-offshore-startup-guide-2026/
+- https://sparkscribetech.com/blog/django-development-company-how-to-choose-2026/
+- https://sparkscribetech.com/blog/evaluate-software-development-partner-12-questions/
+- All posts: https://sparkscribetech.com/blog/
+
+### Services
+- Python development: https://sparkscribetech.com/services/python-development/
+- Django development: https://sparkscribetech.com/services/django-development/
+- AI automation: https://sparkscribetech.com/services/ai-automation/
+- LLM & RAG development: https://sparkscribetech.com/services/llm-rag-development/
+
+## Contact
+
+- Email: ankitv.vaghani@gmail.com
+- Upwork: https://upwork.com/freelancers/ankitvaghani8190
+- LinkedIn: https://www.linkedin.com/in/ankit-vaghani
+- GitHub: https://github.com/vaghaniankit
