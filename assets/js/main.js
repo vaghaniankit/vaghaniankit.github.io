@@ -11,17 +11,54 @@
     contact: 'Contact — Ankit Vaghani'
   };
   var current = 'home';
-  var SITE_START_YEAR = 2018;
+  var CAREER_START_YEAR = 2018;
+  var CAREER_START_MONTH = 0; /* January — Codetrinity start */
+
+  function getExperienceYears() {
+    var now = new Date();
+    var years = now.getFullYear() - CAREER_START_YEAR;
+    if (now.getMonth() < CAREER_START_MONTH) years--;
+    return Math.max(years, 0);
+  }
 
   function setCopyrightYear() {
     var yearEl = document.getElementById('s-copy-year');
     if (!yearEl) return;
     var year = new Date().getFullYear();
-    yearEl.textContent = year > SITE_START_YEAR
-      ? '© ' + SITE_START_YEAR + '–' + year
-      : '© ' + SITE_START_YEAR;
+    yearEl.textContent = year > CAREER_START_YEAR
+      ? '© ' + CAREER_START_YEAR + '–' + year
+      : '© ' + CAREER_START_YEAR;
   }
+
+  function setExperienceYears() {
+    var years = getExperienceYears();
+    var plus = years + '+';
+
+    document.querySelectorAll('[data-exp-years]').forEach(function (el) {
+      el.textContent = String(years);
+    });
+    document.querySelectorAll('[data-exp-years-plus]').forEach(function (el) {
+      el.textContent = plus;
+    });
+    document.querySelectorAll('[data-exp-years-heading]').forEach(function (el) {
+      el.textContent = years + ' YEARS';
+    });
+    document.querySelectorAll('[data-exp-years-tag]').forEach(function (el) {
+      el.textContent = plus + ' years in prod';
+    });
+
+    var meta = document.querySelector('meta[name="description"]');
+    if (meta) {
+      meta.content = 'Senior Python backend engineer with ' + plus + ' years building production APIs, AI/LLM systems, and cloud infrastructure. Top Rated Upwork · Astrosure.ai, HerKey, ANZ.';
+    }
+    var twitter = document.querySelector('meta[name="twitter:description"]');
+    if (twitter) {
+      twitter.content = 'Production backends, AI systems, and cloud infrastructure. ' + plus + ' years · Top Rated Upwork.';
+    }
+  }
+
   setCopyrightYear();
+  setExperienceYears();
 
   function setStatus(el, type, message) {
     if (!el) return;

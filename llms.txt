@@ -1,6 +1,6 @@
 # Ankit Vaghani — Senior Python & Backend Engineer
 
-> Personal portfolio: production backends, AI/LLM systems, microservices, and AWS cloud infrastructure. Top Rated Upwork freelancer with 7+ years experience.
+> Personal portfolio: production backends, AI/LLM systems, microservices, and AWS cloud infrastructure. Top Rated Upwork freelancer with 8+ years experience.
 
 Canonical URL: https://vaghaniankit.github.io/
 Resume (PDF): https://vaghaniankit.github.io/assets/resume/ankit-vaghani-resume.pdf
@@ -11,7 +11,7 @@ Company: https://sparkscribetech.com
 
 Ankit Vaghani is a Senior Python Developer and Backend Engineer based in Surat, Gujarat, India (IST, overlap with US & EU hours). He builds APIs, microservices, async pipelines, and AI-powered backends with full ownership from architecture to production deployment.
 
-- 7+ years in production systems (2018–present professional roles)
+- 8+ years in production systems (professional roles from Jan 2018)
 - 100% Upwork Job Success Score, Top Rated, 12+ completed projects
 - 0–4 hour average response time on Upwork
 - Phone: +91 7573077372

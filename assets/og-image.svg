@@ -41,7 +41,7 @@
 
   <!-- Footer meta -->
   <line x1="120" y1="468" x2="1128" y2="468" stroke="#252525" stroke-width="1"/>
-  <text x="120" y="510" fill="#8a8680" font-family="ui-monospace, monospace" font-size="22" letter-spacing="1">7+ years &#183; Top Rated Upwork &#183; vaghaniankit.github.io</text>
+  <text x="120" y="510" fill="#8a8680" font-family="ui-monospace, monospace" font-size="22" letter-spacing="1">8+ years &#183; Top Rated Upwork &#183; vaghaniankit.github.io</text>
 
   <!-- Decorative code brackets (theme only) -->
   <text x="1080" y="500" fill="#333333" font-family="ui-monospace, monospace" font-size="120" font-weight="300">{</text>
