@@ -11,6 +11,17 @@
     contact: 'Contact — Ankit Vaghani'
   };
   var current = 'home';
+  var SITE_START_YEAR = 2018;
+
+  function setCopyrightYear() {
+    var yearEl = document.getElementById('s-copy-year');
+    if (!yearEl) return;
+    var year = new Date().getFullYear();
+    yearEl.textContent = year > SITE_START_YEAR
+      ? '© ' + SITE_START_YEAR + '–' + year
+      : '© ' + SITE_START_YEAR;
+  }
+  setCopyrightYear();
 
   function setStatus(el, type, message) {
     if (!el) return;

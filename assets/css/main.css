@@ -126,11 +126,73 @@ body.has-custom-cursor { cursor: none; }
 .nav-btn:hover::before { width: 32px; background: var(--accent); }
 .nav-btn.active { color: var(--accent); font-weight: 500; }
 .nav-btn.active::before { width: 32px; background: var(--accent); }
-.s-bottom { border-top: 1px solid var(--border); padding-top: 1.25rem; margin-top: auto; }
-.s-socials { display: flex; flex-wrap: wrap; gap: .75rem 1rem; margin-bottom: .85rem; }
-.s-social { font-family: var(--font-m); font-size: var(--text-xs); color: var(--white3); text-decoration: none; letter-spacing: .06em; text-transform: uppercase; transition: color .2s; }
-.s-social:hover { color: var(--accent); }
-.s-copy { font-family: var(--font-m); font-size: var(--text-xs); color: var(--white3); letter-spacing: .04em; line-height: 1.5; }
+.s-bottom { border-top: 1px solid var(--border); padding-top: 1.15rem; margin-top: auto; }
+.s-foot-lbl {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .75rem;
+  font-family: var(--font-m);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--white3);
+}
+.s-foot-lbl::before {
+  content: '';
+  width: 14px;
+  height: 2px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.s-socials {
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+  margin-bottom: .9rem;
+}
+.s-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  color: var(--white2);
+  text-decoration: none;
+  transition: border-color .2s, color .2s, background .2s, transform .2s;
+}
+.s-social svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: currentColor;
+}
+.s-social-mark {
+  font-family: var(--font-m);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: none;
+}
+.s-social--upwork:hover .s-social-mark { color: var(--accent); }
+.s-social:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(232, 255, 0, 0.06);
+  transform: translateY(-1px);
+}
+.s-meta {
+  font-family: var(--font-m);
+  font-size: var(--text-xs);
+  color: var(--white3);
+  letter-spacing: .03em;
+  line-height: 1.4;
+}
+.s-meta-name { color: var(--white2); }
+.s-meta-sep { margin: 0 .2rem; color: var(--border2); }
 
 /* MAIN */
 #main { margin-left: var(--nav-w); min-height: 100vh; }
